@@ -23,7 +23,7 @@ const docProcessingQueue = require('./services/docProcessingQueue');
 const s3Service = require('./services/s3Service');
 
 // Main server
-const server = require('./server');
+const server = require('./src/server');
 
 // Export all components
 module.exports = {
