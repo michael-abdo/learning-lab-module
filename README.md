@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logos/runtheons.svg" alt="RunTheOns Logo" width="400" />
+  <img src="logos/runtheons.png" alt="RunTheOns Logo" width="400" />
   
   # Learning Lab Module
   
