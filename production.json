@@ -1,0 +1,31 @@
+{
+  "app": {
+    "environment": "production",
+    "port": "${PORT}"
+  },
+  "database": {
+    "mongodb": {
+      "uri": "${MONGODB_URI}"
+    },
+    "redis": {
+      "host": "${REDIS_HOST}",
+      "port": "${REDIS_PORT}"
+    }
+  },
+  "aws": {
+    "region": "${AWS_REGION}",
+    "s3": {
+      "bucket": "${S3_BUCKET}"
+    }
+  },
+  "llm": {
+    "defaultProvider": "${LLM_PROVIDER}"
+  },
+  "queue": {
+    "concurrency": 10
+  },
+  "auth": {
+    "tokenExpiry": "12h",
+    "refreshTokenExpiry": "30d"
+  }
+}

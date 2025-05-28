@@ -1,0 +1,84 @@
+{
+  "app": {
+    "name": "Learning Lab Module",
+    "version": "1.0.0",
+    "port": 3000,
+    "environment": "development"
+  },
+  "database": {
+    "mongodb": {
+      "uri": "mongodb://localhost:27017/learninglab",
+      "options": {
+        "useNewUrlParser": true,
+        "useUnifiedTopology": true
+      }
+    },
+    "redis": {
+      "host": "127.0.0.1",
+      "port": 6379
+    }
+  },
+  "aws": {
+    "region": "us-east-1",
+    "s3": {
+      "bucket": "learning-lab-documents"
+    },
+    "services": {
+      "textract": {
+        "enabled": true
+      },
+      "transcribe": {
+        "enabled": true
+      },
+      "rekognition": {
+        "enabled": true
+      }
+    }
+  },
+  "llm": {
+    "defaultProvider": "openai",
+    "providers": {
+      "openai": {
+        "model": "gpt-3.5-turbo",
+        "embeddingModel": "text-embedding-ada-002"
+      },
+      "anthropic": {
+        "model": "claude-3-sonnet-20240229"
+      },
+      "google": {
+        "model": "gemini-pro"
+      }
+    }
+  },
+  "queue": {
+    "concurrency": 5,
+    "defaultJobOptions": {
+      "removeOnComplete": true,
+      "removeOnFail": false,
+      "attempts": 3,
+      "backoff": {
+        "type": "exponential",
+        "delay": 2000
+      }
+    }
+  },
+  "vectorSearch": {
+    "indexName": "vector_index",
+    "dimensions": 1536,
+    "similarity": "cosine",
+    "numCandidates": 100,
+    "limit": 5
+  },
+  "upload": {
+    "maxFileSize": 1073741824,
+    "allowedFileTypes": [
+      ".pdf", ".txt", ".doc", ".docx", ".xls", ".xlsx",
+      ".jpg", ".jpeg", ".png", ".gif", ".bmp",
+      ".mp3", ".wav", ".mp4", ".avi", ".mov"
+    ]
+  },
+  "auth": {
+    "tokenExpiry": "24h",
+    "refreshTokenExpiry": "7d"
+  }
+}
